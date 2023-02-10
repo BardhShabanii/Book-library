@@ -12,8 +12,11 @@ module.exports = {
   getBookById: async (req, res) => {
     try {
       const id = req.params.id;
-      await Task.findById({ _id: id });
-      res.redirect("/:id");
+      const book = await Book.findById({ _id: id });
+      res.render("editBook", {
+        title: "test",
+        book: book,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +39,7 @@ module.exports = {
     try {
       const id = req.params.id;
       await Book.findByIdAndUpdate(
-        { id: _id },
+        { _id: id },
         {
           bookTitle: req.body.bookTitle,
           bookAuthor: req.body.bookAuthor,
@@ -52,9 +55,9 @@ module.exports = {
 
   deleteBook: async (req, res) => {
     try {
-        const id = req.params.id
-        await Book.findByIdAndDelete({_id: id});
-        res.redirect("/")
+      const id = req.params.id;
+      await Book.findByIdAndDelete({ _id: id });
+      res.redirect("/");
     } catch (error) {
       console.log(error);
     }
