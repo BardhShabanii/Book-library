@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css"
-    <title>Document</title>
-</head>
-<body>
-    <div class="insert-page">
-        <h2 class="insert-title">Insert a new book</h2>
-        <!-- Add form fields for the book information here -->
-        <button class="submit-button">Submit</button>
-      </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/addBook.css" />
+    <title>Add Book</title>
+  </head>
+  <body>
+    <div class="book-card">
+      <form class="add-book-form" action="/addBook" method="POST">
+        <label for="bookTitle">Title:</label>
+        <input type="text" name="bookTitle" />
+
+        <label for="bookAuthor">Author:</label>
+        <input type="text" name="bookAuthor" />
+
+        <label for="bookDescription">Description:</label>
+        <input type="text" name="bookDescription" />
+
+        <label for="bookGenre">Genre:</label>
+        <input type="text" name="bookGenre" />
+
+        <button type="submit">Add</button>
+      </form>
+    </div>
+  </body>
 </html>

@@ -51,6 +51,10 @@
   cursor: pointer;
 }
 
+#addbutton{
+margin: 20px 5px;
+}
+
 .button:hover {
   background-color: #666;
 }
@@ -66,4 +70,9 @@
   color: #888;
 }
 
-  
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  .book {
+    width: 100%;
+  }
+}

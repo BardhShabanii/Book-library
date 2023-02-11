@@ -8,8 +8,12 @@
     <title>Books</title>
 </head>
 <body>
-    <%books.forEach(book => {%>
-    <div class="book-container">
+  <a href="addBook">
+    <button id="addbutton" class="button">Add Book</button>
+  </a>
+
+  <div class="book-container">
+      <%books.forEach(book => {%>
         <div class="book">
           <!-- <img src="book-cover.jpg" alt="Book Cover"> -->
           <div class="book-info">
@@ -18,9 +22,9 @@
             <p class="book-genre" name="bookGenre" >Genre: <%= book.bookGenre%></p>
             <p class="book-description" name="bookDescription" >Book Description:<%= book.bookDescription%></p>
             <div class="buttons-container">
-                <a href="editBook/<%=book._id%>">
-                    <button class="button">Edit</button>
-                    </a>
+              <a href="editBook/<%=book._id%>">
+                <button class="button">Edit</button>
+              </a>
 
                 <form action="/<%=book._id%>?_method=DELETE" method="POST">
                 <button class="button" type="submit">Delete</button>
@@ -28,8 +32,8 @@
               </div>
           </div>
         </div>
+        <%})%>
       </div>
-      <%})%>
       
 </body>
 </html>

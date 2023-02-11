@@ -22,6 +22,14 @@ module.exports = {
     }
   },
 
+  getCreatePage: async (req, res) => {
+    try {
+      res.render("addBook", { title: "Add new book" });
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
   createBook: async (req, res) => {
     try {
       await Book.create({
@@ -30,6 +38,7 @@ module.exports = {
         bookDescription: req.body.bookDescription,
         bookGenre: req.body.bookGenre,
       });
+      res.redirect("/")
     } catch (error) {
       console.log(error);
     }
