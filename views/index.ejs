@@ -8,9 +8,16 @@
     <title>Books</title>
 </head>
 <body>
-  <a href="addBook">
-    <button id="addbutton" class="button">Add Book</button>
-  </a>
+  <div class="test">
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Search for books...">
+      <button type="submit" id="search-button">Search</button>
+    </form>
+
+    <a href="addBook">
+      <button id="addbutton" class="button">Add Book</button>
+    </a>
+  </div>
 
   <div class="book-container">
       <%books.forEach(book => {%>
