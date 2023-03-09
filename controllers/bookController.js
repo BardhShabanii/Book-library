@@ -2,7 +2,7 @@ const Book = require("../models/Book");
 module.exports = {
   getBooks: async (req, res) => {
     try {
-      const books = await Book.find();//.sort({createdAt: "asc"})
+      const books = await Book.find();//.sort({createdAt: "asc" })
       res.render("index", { books: books });
     } catch (error) {
       console.log(error);
