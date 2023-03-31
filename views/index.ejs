@@ -8,11 +8,13 @@
     <title>Books</title>
 </head>
 <body>
-  <div class="test">
+  <h1>Welcome back: <%= userName%></h1>
+  <div class="container">
     <form id="search-form">
       <input type="text" id="search-input" placeholder="Search for books...">
       <button type="submit" id="search-button">Search</button>
     </form>
+    
 
       <!-- <label for="sort-select">Sort by:</label> -->
       <select name="sortBy" id="sort">
@@ -25,10 +27,14 @@
     <a href="addBook">
       <button id="addbutton" class="button">Add Book</button>
     </a>
+    <a href="/logout">
+      <button class="button">Log Out</button>
+    </a>
   </div>
 
   <div class="book-container">
       <%books.forEach(book => {%>
+        <!-- if (book.user.toString() === userId.toString()) {  -->
         <div class="book">
           <!-- <img src="book-cover.jpg" alt="Book Cover"> -->
           <div class="book-info">
@@ -45,9 +51,10 @@
                 <button class="button" type="submit">Delete</button>
                 </form>
               </div>
+            </div>
           </div>
-        </div>
-        <%})%>
+          <!-- <}> -->
+          <%})%>
       </div>
       
 </body>
