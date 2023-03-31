@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/main.css" />
     <title>Books</title>
-</head>
-<body>
-  <h1>Welcome back: <%= userName%></h1>
-  <div class="container">
-    <form id="search-form">
-      <input type="text" id="search-input" placeholder="Search for books...">
-      <button type="submit" id="search-button">Search</button>
-    </form>
-    
+  </head>
+  <body>
+    <div class="main-bg">
+      <h1 class="banner">Welcome back: <%= userName%></h1>
+      <div class="container">
+        <div class="buttons-left">
+          <form id="search-form">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search for books..."
+            />
+            <button type="submit" id="search-button">Search</button>
+          </form>
 
-      <!-- <label for="sort-select">Sort by:</label> -->
-      <select name="sortBy" id="sort">
-        <option value="Added New">Date Added: new</option>
-        <option value="Added Old">Date Added: old</option>
-        <option value="Alphabetical">Alphabetical</option>
-        <option value="Rating">Top Rated</option>
-      </select> 
+          <!-- <label for="sort-select">Sort by:</label> -->
+          <select name="sortBy" id="sort">
+            <option value="Added New">Date Added: new</option>
+            <option value="Added Old">Date Added: old</option>
+            <option value="Alphabetical">Alphabetical</option>
+            <option value="Rating">Top Rated</option>
+          </select>
 
-    <a href="addBook">
-      <button id="addbutton" class="button">Add Book</button>
-    </a>
-    <a href="/logout">
-      <button class="button">Log Out</button>
-    </a>
-  </div>
+          <a href="addBook">
+            <button id="addbutton" class="button">Add Book</button>
+          </a>
+        </div>
+        <div class="buttons-right">
+          <a href="/logout">
+            <button class="button" id="log-out">Log Out</button>
+          </a>
+        </div>
+      </div>
 
-  <div class="book-container">
-      <%books.forEach(book => {%>
+      <div class="book-container">
+        <%books.forEach(book => {%>
         <!-- if (book.user.toString() === userId.toString()) {  -->
         <div class="book">
           <!-- <img src="book-cover.jpg" alt="Book Cover"> -->
           <div class="book-info">
-            <h3 class="book-title" name="bookTitle" >Book Title: <%= book.bookTitle%></h3>
-            <p class="book-author" name="bookAuthor" >Book Author: <%= book.bookAuthor%></p>
-            <p class="book-genre" name="bookGenre" >Genre: <%= book.bookGenre%></p>
-            <p class="book-description" name="bookDescription" >Book Description: <%= book.bookDescription%></p>
+            <h3 class="book-title" name="bookTitle">
+              Book Title: <%= book.bookTitle%>
+            </h3>
+            <p class="book-author" name="bookAuthor">
+              Book Author: <%= book.bookAuthor%>
+            </p>
+            <p class="book-genre" name="bookGenre">
+              Genre: <%= book.bookGenre%>
+            </p>
+            <p class="book-description" name="bookDescription">
+              Book Description: <%= book.bookDescription%>
+            </p>
             <div class="buttons-container">
               <a href="editBook/<%=book._id%>">
-                <button class="button">Edit</button>
+                <button class="button" id="card-button">Edit</button>
               </a>
 
-                <form action="/<%=book._id%>?_method=DELETE" method="POST">
-                <button class="button" type="submit">Delete</button>
-                </form>
-              </div>
+              <form action="/<%=book._id%>?_method=DELETE" method="POST">
+                <button class="button" id="card-button" type="submit">
+                  Delete
+                </button>
+              </form>
             </div>
           </div>
-          <!-- <}> -->
-          <%})%>
+        </div>
+        <!-- <}> -->
+        <%})%>
       </div>
-      
-</body>
+    </div>
+  </body>
 </html>

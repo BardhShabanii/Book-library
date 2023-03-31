@@ -1,7 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+
+.main-bg {
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.banner {
+  margin: 0;
+}
+
 .book-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .book {
@@ -11,6 +26,7 @@
   box-shadow: 0px 0px 10px 0px #ccc;
   border-radius: 10px;
   overflow: hidden;
+  background-color: white;
 }
 
 .book img {
@@ -41,15 +57,19 @@
 
 .button {
   display: block;
-  width: 100px;
+  min-width: 12vw;
   margin: 20px auto;
-  padding: 10px;
+  padding: 12px;
   background-color: #333;
   color: #fff;
   border: none;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
+}
+
+#log-out {
+  justify-content: flex-end;
 }
 
 #addbutton {
@@ -80,6 +100,19 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.buttons-right {
+  margin-right: auto;
+  order: 1;
+}
+
+.buttons-left {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
