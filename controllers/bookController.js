@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const Book = require("../models/Book");
 const User = require("../models/User");
 const passport = require("passport");
@@ -202,6 +203,23 @@ module.exports = {
       res.redirect("/");
     } catch (error) {
       console.log(error);
+    }
+  },
+
+  getByName: async (req, res) => {
+    try {
+      const db = mongoose.connection;
+      const name = req.params.name;
+      console.log(name);
+      // const result = await Book.find({
+      //   $text: { $search: req.params.name },
+      // }); //, $caseSensitive: false
+
+      const results = Book.find({ name });
+      // console.log(result);
+      res.render("getBook", { results, name });
+    } catch (error) {
+      console.log("error" + error);
     }
   },
 };

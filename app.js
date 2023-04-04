@@ -11,6 +11,7 @@ const dbURI =
   "mongodb+srv://bardhi:bardhi123@cluster0.4rotd4t.mongodb.net/?retryWrites=true&w=majority";
 const PORT = 8000;
 
+const db = mongoose.connection.useDb('BookDatabase')
 require("./config/passport")(passport);
 
 mongoose.connect(dbURI);

@@ -1,34 +1,37 @@
+body {
+  font-family: sans-serif;
+  background-color: #d2e8ed;
+}
+
 .book-card {
-    width: 500px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px #888888;
-    margin: 20px auto;
-  }
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 #b7b7b7;
+  background-color: #bcdcdf;
+  margin: 20px auto;
+}
 
-  .update-form input[type="text"],
-  .update-form input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 5px;
-  }
+.update-form input[type="text"],
+.update-form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+}
 
-  .update-form button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.update-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  .update-form button[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-
-  
+.update-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}

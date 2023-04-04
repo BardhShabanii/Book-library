@@ -16,5 +16,6 @@ router.delete("/:id", bookController.deleteBook);
 router.get("/editBook/:id", bookController.getBookById);
 router.get("/addBook", bookController.getCreatePage);
 router.post("/addBook", bookController.createBook);
+router.get("/getBook/:name", bookController.getByName);
 
 module.exports = router;
