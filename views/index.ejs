@@ -12,19 +12,14 @@
       <h1 class="banner">Welcome back: <%= userName%></h1>
       <div class="container">
         <div class="buttons-left">
-          <form id="search-form">
+          <form id="search-form" action="/getBook">
             <input
-              action="/getBook"
-              method="GET"
               type="text"
               name="name"
               id="search-input"
-              type="submit"
               placeholder="Search for books..."
             />
-            <a href="/getBook">
-              <button type="submit" id="search-button">Search</button>
-            </a>
+            <button type="submit" id="search-button">Search</button>
           </form>
 
           <!-- <label for="sort-select">Sort by:</label> -->

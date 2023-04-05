@@ -208,15 +208,10 @@ module.exports = {
 
   getByName: async (req, res) => {
     try {
-      const db = mongoose.connection;
-      const name = req.params.name;
-      console.log(name);
-      // const result = await Book.find({
-      //   $text: { $search: req.params.name },
-      // }); //, $caseSensitive: false
-
-      const results = Book.find({ name });
-      // console.log(result);
+      const name = req.query.name;
+      const results = await Book.find({
+        $text: { $search: req.query.name },
+      });
       res.render("getBook", { results, name });
     } catch (error) {
       console.log("error" + error);
