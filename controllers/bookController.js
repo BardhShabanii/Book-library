@@ -133,15 +133,6 @@ module.exports = {
     });
   },
 
-  // getBooks: async (req, res) => {
-  //   try {
-  //     const books = await Book.find({ user: req.user.id }); //.sort({createdAt: "asc" })
-  //     res.render("index", { books: books });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // },
-
   getBookById: async (req, res) => {
     try {
       const id = req.params.id;
