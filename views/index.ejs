@@ -22,7 +22,6 @@
             <button type="submit" id="search-button">Search</button>
           </form>
 
-          <!-- <label for="sort-select">Sort by:</label> -->
           <select name="sortBy" id="sort">
             <option value="Added New">Date Added: new</option>
             <option value="Added Old">Date Added: old</option>
@@ -43,9 +42,7 @@
 
       <div class="book-container">
         <%books.forEach(book => {%>
-        <!-- if (book.user.toString() === userId.toString()) {  -->
         <div class="book">
-          <!-- <img src="book-cover.jpg" alt="Book Cover"> -->
           <div class="book-info">
             <h3 class="book-title" name="bookTitle">
               Book Title: <%= book.bookTitle%>
@@ -72,7 +69,6 @@
             </div>
           </div>
         </div>
-        <!-- <}> -->
         <%})%>
       </div>
     </div>

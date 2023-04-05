@@ -199,10 +199,15 @@ module.exports = {
 
   getByName: async (req, res) => {
     try {
+      const userId = req.user._id;
       const name = req.query.name;
       const results = await Book.find({
-        $text: { $search: req.query.name },
+        $and: [
+          { $text: { $search: name } },
+          { user: mongoose.Types.ObjectId(userId) },
+        ],
       });
+
       res.render("getBook", { results, name });
     } catch (error) {
       console.log("error" + error);

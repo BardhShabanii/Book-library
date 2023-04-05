@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles/main.css" />
-    <title>Document</title>
+    <title>Search Book</title>
   </head>
   <body class="main-bg">
-    <!-- views/search.ejs -->
     <h1>Search Results</h1>
 
     <% if (results.length === 0) { %>
@@ -19,9 +18,7 @@
       </a>
     </p>
     <% } else { %> <%results.forEach(book => {%>
-    <!-- if (book.user.toString() === userId.toString()) {  -->
     <div class="book">
-      <!-- <img src="book-cover.jpg" alt="Book Cover"> -->
       <div class="book-info">
         <h3 class="book-title" name="bookTitle">
           Book Title: <%= book.bookTitle%>
@@ -46,10 +43,10 @@
         </div>
       </div>
     </div>
-    <!-- <}> -->
+    <%})%>
     <a href="/">
       <button class="button" style="margin-left: 0">Go back</button>
     </a>
-    <%})%> <% } %>
+    <% } %>
   </body>
 </html>
